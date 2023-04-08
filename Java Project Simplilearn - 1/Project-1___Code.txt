@@ -1,0 +1,157 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Assignment {
+
+	private static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+		
+		
+		File dir = new File("C:\\Users\\SravanaSaiKrishna\\Simplilearn\\JavaAssignment");
+		if (!dir.exists()) {                             // created a directory
+	    	  dir.mkdirs();
+	    	}
+		
+		String[] flist = dir.list();
+		
+		System.out.println("********************************************************");
+		System.out.println("*******************Welcome Simplilearn******************");
+		System.out.println("*************Developer: Sravana Sai krishna*************");
+		System.out.println("********************************************************");
+		
+		
+		char ch;
+		do
+		{
+
+			System.out.println("Select File Option to perform any operation:- \n");
+			System.out.println("1.Files Ascending");
+			System.out.println("2.File Creation");
+			System.out.println("3.File List");
+			System.out.println("4.File Delete");
+			System.out.println("5.Search file");
+			System.out.println("6.Exit");
+			
+			int choice = sc.nextInt();
+			
+			switch(choice)
+			{
+			    case 1: files_Ascending(); break;
+				case 2: file_Creation(); break;
+				case 3: file_list();  break;
+				case 4: deleteFile();  break;
+				case 5: searchfile(); break;
+				case 6: break;
+				
+			}		
+			System.out.println("Do you want to continue Type (y or n) ");
+			ch = sc.next().charAt(0);
+		} while(ch=='Y' || ch=='N' || ch=='y' || ch=='n');
+		
+	}
+	
+
+	private static void files_Ascending() {
+		System.out.println("Files are in Acending Order");
+		File dir = new File("C:\\Simplilearn_Assignment\\Sravana\\JavaAssignment");
+		File[] list_files = dir.listFiles();
+	    for (int i = 0; i < list_files.length - 1; i++) {
+	        for (int j = 0; j < list_files.length - i - 1; j++) {
+	        	if (list_files[j].getName().compareToIgnoreCase(list_files[j + 1].getName()) > 0) {
+	                // Swap list_files[j] and list_files[j+1]
+	                File temp = list_files[j];
+	                list_files[j] = list_files[j + 1];
+	                list_files[j + 1] = temp;
+	            }
+	        }
+	    }	    
+	    file_list();
+		
+	}
+
+
+	private static void searchfile() {
+		System.out.println("Searching the files in the directory");
+		System.out.println("Enter the file name to search in directory");
+		String directoryPath = "C:\\Simplilearn_Assignment\\Sravana\\JavaAssignment";
+		String filename = sc.next();	
+
+		File searchfile = new File(directoryPath, filename);
+        
+
+		if (searchfile.isFile() ) {
+		    System.out.println("File searched successfully.");
+		} else {
+		    System.out.println("Failed to search the file.");
+		}
+
+		
+	}
+
+	private static void deleteFile()
+	{
+		System.out.println("Deleting the files in the directory");
+		System.out.println("Enter the file name to delete in directory");
+		String directoryPath = "C:\\Simplilearn_Assignment\\Sravana\\JavaAssignment";
+		String filename = sc.next();	
+
+		File fileToDelete = new File(directoryPath, filename);
+
+		if (fileToDelete.delete()) {
+		    System.out.println("File deleted successfully.");
+		} else {
+		    System.out.println("Failed to delete the file.");
+		}
+
+		
+	}
+
+	private static void file_list() {
+		System.out.println("Displaying the file_names in the directory");
+		File dir = new File("C:\\Simplilearn_Assignment\\Sravana\\JavaAssignment");
+		File[] list_files = dir.listFiles();
+		for (File file : list_files) {
+			if(file.isDirectory()) {
+				System.out.println(file.getName());
+			}
+			else if(file.isFile()) {
+				System.out.println(file.getName());
+			}
+			
+		}
+		
+	}
+
+	private static void file_Creation() {
+		System.out.println("Enter the New file_name to create");
+		String filename = sc.next();
+		try {
+			
+					File dir = new File("C:\\Simplilearn_Assignment\\Sravana\\JavaAssignment");
+					if (!dir.exists()) 
+					{                             // created a directory
+					    	  dir.mkdirs();
+					}					
+					File file = new File("C:\\Simplilearn_Assignment\\Sravana\\JavaAssignment\\" + filename +".txt");
+					 if (file.createNewFile()) 
+					 {
+					        System.out.println("File created: " + file.getName());
+					 } 
+					 else 
+					 {
+					         System.out.println("File already exists.");
+					 }
+			        System.out.println("Path of file: " + file.getAbsolutePath());
+			}
+			catch (IOException e) 
+			{ 
+			      System.out.println("An error occurred.");
+			    
+			 }	
+	}
+}
+	
+
+
+

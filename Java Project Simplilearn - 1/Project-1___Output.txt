@@ -1,0 +1,75 @@
+********************************************************
+*******************Welcome Simplilearn******************
+*************Developer: Sravana Sai krishna*************
+********************************************************
+Select File Option to perform any operation:- 
+
+1.Files Ascending
+2.File Creation
+3.File List
+4.File Delete
+5.Search file
+6.Exit
+1
+Files are in Acending Order
+Displaying the file_names in the directory
+abc.txt
+file2.txt
+file3.rtf
+Javafile.txt
+Jvaf.txt
+New Text Document.txt
+Zoo.txt
+Do you want to continue Type (y or n) 
+y
+Select File Option to perform any operation:- 
+
+1.Files Ascending
+2.File Creation
+3.File List
+4.File Delete
+5.Search file
+6.Exit
+3
+Displaying the file_names in the directory
+abc.txt
+file2.txt
+file3.rtf
+Javafile.txt
+Jvaf.txt
+New Text Document.txt
+Zoo.txt
+Do you want to continue Type (y or n) 
+y
+Select File Option to perform any operation:- 
+
+1.Files Ascending
+2.File Creation
+3.File List
+4.File Delete
+5.Search file
+6.Exit
+4
+Deleting the files in the directory
+Enter the file name to delete in directory
+abc.txt
+File deleted successfully.
+Do you want to continue Type (y or n) 
+y
+Select File Option to perform any operation:- 
+
+1.Files Ascending
+2.File Creation
+3.File List
+4.File Delete
+5.Search file
+6.Exit
+3
+Displaying the file_names in the directory
+file2.txt
+file3.rtf
+Javafile.txt
+Jvaf.txt
+New Text Document.txt
+Zoo.txt
+Do you want to continue Type (y or n) 
