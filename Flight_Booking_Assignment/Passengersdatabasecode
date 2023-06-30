@@ -1,0 +1,12 @@
+USE Passengers_db;
+
+CREATE TABLE flights (
+  flight_id INT PRIMARY KEY AUTO_INCREMENT,
+  flight_name VARCHAR(50) NOT NULL,
+  sources VARCHAR(50) NOT NULL,
+  destinations VARCHAR(50) NOT NULL,
+  price DECIMAL(10, 2),
+  link VARCHAR(100)
+);
+
+select * from passenger_details
